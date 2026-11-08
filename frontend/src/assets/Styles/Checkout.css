@@ -1,0 +1,242 @@
+.checkout-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: sans-serif;
+}
+
+.checkout-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+/* ── INDICADOR DE PASOS ── */
+.checkout-pasos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.paso {
+  padding: 6px 20px;
+  border-radius: 20px;
+  background: #eee;
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.paso.activo {
+  background: #c0392b;
+  color: white;
+}
+
+.paso-linea {
+  flex: 1;
+  height: 2px;
+  background: #eee;
+  max-width: 60px;
+}
+
+/* ── ERROR ── */
+.checkout-error {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #856404;
+}
+
+/* ── GRID ── */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+}
+
+/* ── FORMULARIO ── */
+.checkout-form {
+  background: #fff5f5;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.checkout-form h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+.checkout-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.checkout-form input:focus {
+  outline: none;
+  border-color: #c0392b;
+}
+
+/* ── BOTONES ── */
+.checkout-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.checkout-btn:hover { background: #a93226; }
+.checkout-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+.checkout-btn-secondary {
+  margin-top: 1.5rem;
+  flex: 1;
+  background: #888;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── YAPE ── */
+.yape-qr-box {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  margin: 1rem 0;
+  border: 2px solid #f0f0f0;
+}
+
+.yape-qr {
+  width: 180px;
+  height: 180px;
+  margin: 12px auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.yape-numero {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6b21a8;
+  margin: 8px 0;
+}
+
+.yape-monto {
+  font-size: 1rem;
+  color: #333;
+  background: #f5f0ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: inline-block;
+}
+
+.yape-captura label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* ── RESUMEN ── */
+.checkout-resumen {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.checkout-resumen h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.checkout-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.checkout-item img {
+  width: 70px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.item-nombre { font-weight: 600; font-size: 0.95rem; margin: 0 0 4px; }
+.item-detalle { font-size: 0.8rem; color: #777; margin: 0 0 4px; }
+.item-precio { font-weight: 700; color: #c0392b; margin: 0; }
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #ddd;
+  font-size: 1.2rem;
+}
+
+.checkout-total strong { color: #c0392b; font-size: 1.4rem; }
+
+/* ── ÉXITO ── */
+.checkout-exito {
+  max-width: 500px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+.exito-icono { font-size: 4rem; margin-bottom: 1rem; }
+.checkout-exito h1 { color: #27ae60; margin-bottom: 1rem; }
+.checkout-exito p { color: #555; margin-bottom: 0.5rem; }
+.checkout-exito button {
+  margin-top: 2rem;
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .checkout-grid { grid-template-columns: 1fr; }
+  .checkout-resumen { position: static; }
+}

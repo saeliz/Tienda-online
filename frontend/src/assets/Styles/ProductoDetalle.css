@@ -1,0 +1,161 @@
+.cargando {
+  padding: 2rem;
+  text-align: center;
+}
+
+.detalle-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.detalle-volver {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.detalle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .detalle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detalle-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.detalle-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.detalle-estrellas {
+  color: #f5a623;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.detalle-estrellas span {
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: 6px;
+}
+
+.detalle-precio {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.detalle-precio .pen {
+  font-size: 1rem;
+  color: #888;
+}
+
+.detalle-envio {
+  color: #007a5e;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.detalle-seccion {
+  margin-bottom: 1.2rem;
+}
+
+.detalle-seccion p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.detalle-colores {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.color-btn.activo {
+  border: 3px solid #333;
+}
+
+.detalle-tallas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.talla-btn {
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.talla-btn.activo {
+  border-color: #333;
+  background: #333;
+  color: white;
+}
+
+.detalle-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detalle-cantidad button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.detalle-cantidad span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.detalle-btn-carrito {
+  width: 100%;
+  padding: 14px;
+  background: #f8a4b8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.detalle-btn-carrito:hover {
+  background: #e07090;
+}

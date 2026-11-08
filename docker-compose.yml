@@ -1,0 +1,46 @@
+services:
+  # ── BASE DE DATOS ──────────────────────────────────
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dev9898
+      POSTGRES_DB: Tieenda_online
+    ports:
+      - "5433:5432"
+    volumes:
+      # ✅ Persiste los datos aunque Docker se reinicie
+      - postgres_data:/var/lib/postgresql/data
+
+  # ── BACKEND ────────────────────────────────────────
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: dev9898
+      DB_NAME: Tieenda_online
+    volumes:
+      # ✅ Persiste las imágenes y videos subidos
+      - uploads_data:/app/uploads
+
+  # ── FRONTEND ───────────────────────────────────────
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    volumes:
+      # ✅ Comparte el volumen de uploads con el frontend
+      - uploads_data:/usr/share/nginx/html/uploads
+
+volumes:
+  postgres_data:   # ✅ Datos de PostgreSQL
+  uploads_data:    # ✅ Imágenes y videos subidos

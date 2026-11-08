@@ -1,0 +1,359 @@
+/* ══════════════════════════════════════════
+   HOME.CSS — Elegant Clothes
+   Estilos principales de la página de inicio
+══════════════════════════════════════════ */
+
+/* ── RESET BASE ── */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home { width: 100%; }
+
+/* ══════════════════════════════════════════
+   HERO — Video de fondo + Slider de texto
+══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* ── SLIDER HERO ── */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6%;
+}
+
+/* ✅ Animación de entrada al cambiar slide */
+.hs-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 540px;
+  animation: slideIn 0.6s ease both;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hs-badge {
+  display: inline-block;
+  background: rgba(240, 192, 96, 0.25);
+  border: 1px solid #ffaf10;
+  color: #ee6969;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.hs-titulo {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: #ff1111;
+  line-height: 1.1;
+}
+
+.hs-descuento { color: #cc6c6c; font-style: italic; }
+
+.hs-subtitulo {
+  font-size: 1.1rem;
+  color: rgba(216, 80, 80, 0.9);
+  font-weight: 500;
+}
+
+.hs-detalle {
+  font-size: 0.88rem;
+  color: rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.05em;
+}
+
+.hs-btn {
+  display: inline-block;
+  background: #ffd176;
+  color: #000;
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hs-btn:hover { background: #fcb5b5; transform: translateY(-2px); }
+
+/* ── PUNTOS DE NAVEGACIÓN DEL SLIDER ── */
+.hs-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 6%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hs-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hs-dot.activo { background: #e98585; transform: scale(1.3); }
+
+/* ══════════════════════════════════════════
+   COLECCIÓN DESTACADA
+══════════════════════════════════════════ */
+.catalogo-home {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.catalogo-titulo {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  letter-spacing: 0.1em;
+}
+
+/* ── TARJETA DE PRODUCTO ── */
+.pd-card {
+  display: flex;
+  gap: 2.5rem;
+  background: #fcecec;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+  /* ✅ Centra verticalmente todos los elementos de la card */
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════
+   GALERÍA — Video principal + columna lateral
+══════════════════════════════════════════ */
+
+/* ✅ Contenedor galería — sin overflow para no cortar el zoom */
+.pd-galeria {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  /* ✅ Centra verticalmente el video y la columna lateral */
+  align-items: center;
+}
+
+/* ✅ Video principal grande */
+.pd-imagen-grande {
+  width: 360px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #f5f0eb;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pd-imagen-grande:hover { transform: scale(1.04); }
+
+/* ✅ Columna lateral — imagen + miniaturas centradas */
+.pd-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* ✅ Centra horizontalmente y verticalmente */
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+/* ── MINIATURAS DE VIDEOS EXTRA ── */
+/* ✅ Solo aparecen si el admin subió más de un video */
+.pd-videos-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.pd-video-mini {
+  width: 100px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.55;
+  transition: all 0.25s ease;
+}
+
+.pd-video-mini:hover { opacity: 0.85; transform: scale(1.04); }
+
+/* ✅ Miniatura de video activa */
+.pd-video-mini.activo {
+  border-color: #c0392b;
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* ── IMAGEN THUMBNAIL — zoom sigue el cursor ── */
+.pd-imagen-thumb {
+  /* ✅ Más grande y centrada */
+  width: 200px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+  /* ✅ Cursor de lupa profesional */
+  cursor: crosshair;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  /* ✅ Se centra verticalmente respecto al video */
+  align-self: center;
+}
+
+.pd-imagen-thumb:hover { border-color: #c0392b; }
+
+.pd-imagen-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ✅ Transición rápida para que el zoom siga el cursor suavemente */
+  transition: transform 0.15s ease;
+  will-change: transform;
+}
+
+/* ══════════════════════════════════════════
+   INFO DEL PRODUCTO — textos más grandes
+══════════════════════════════════════════ */
+.pd-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  flex: 1;
+}
+
+/* ✅ Nombre del producto más grande */
+.pd-info h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+/* ✅ Estrellas más grandes */
+.pd-estrellas { color: #f0a500; font-size: 1.2rem; }
+
+.pd-estrellas span {
+  color: #777;
+  font-size: 1rem;
+  margin-left: 0.3rem;
+}
+
+/* ✅ Precio más grande */
+.pd-precio {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.pd-precio span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  vertical-align: top;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* ✅ Link al catálogo más visible */
+.pd-otros-colores {
+  color: #0066c0;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pd-otros-colores:hover { text-decoration: underline; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — Móvil
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .pd-card { flex-direction: column; }
+  .pd-galeria { flex-direction: row; align-items: flex-start; }
+  .pd-imagen-grande { width: 220px; height: 260px; }
+  .pd-imagen-thumb  { width: 100px; height: 130px; }
+  .pd-video-mini    { width: 70px;  height: 80px; }
+}
+
+/* ══════════════════════════════════════════
+   WHATSAPP FLOTANTE
+══════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease;
+  /* ✅ Animación de brillo para llamar la atención */
+  animation: brillar 1.3s infinite alternate;
+}
+
+.whatsapp-float svg { width: 32px; height: 32px; }
+.whatsapp-float:hover { transform: scale(1.1); }
+
+/* ✅ Animación de brillo multicolor */
+@keyframes brillar {
+  0%   { box-shadow: 0 0 10px #25D366, 0 0 20px #25D366; }
+  33%  { box-shadow: 0 0 10px #128C7E, 0 0 25px #128C7E; }
+  66%  { box-shadow: 0 0 10px #00e5ff, 0 0 25px #00e5ff; }
+  100% { box-shadow: 0 0 15px #25D366, 0 0 35px #25D366; }
+}

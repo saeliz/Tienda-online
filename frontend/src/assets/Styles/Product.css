@@ -1,0 +1,13 @@
+.product {
+  padding: 20px;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

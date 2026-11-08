@@ -1,0 +1,145 @@
+/* ===== Todo.css - Menú lateral estilo Amazon ===== */
+
+/* Overlay oscuro de fondo */
+.todo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 999;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.todo-overlay--visible {
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: all;
+}
+
+/* Panel lateral */
+.todo-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  max-width: 85vw;
+  background: #fff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.todo-sidebar--open {
+  transform: translateX(0);
+}
+
+/* Header del sidebar */
+.todo-header {
+  background: #232f3e;
+  color: #fff;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.todo-header__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-header__icon {
+  font-size: 1.4rem;
+}
+
+.todo-header__title {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.todo-close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.todo-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Área de scroll */
+.todo-content {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.todo-content::-webkit-scrollbar {
+  width: 4px;
+}
+.todo-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Sección del menú */
+.todo-section {
+  border-bottom: 8px solid #f0f2f2;
+}
+
+.todo-section__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111;
+  padding: 14px 16px 6px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.todo-section__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+
+/* Item individual */
+.todo-item {
+  margin: 0;
+}
+
+.todo-item__btn {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  color: #111;
+  cursor: pointer;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  transition: background 0.15s;
+}
+
+.todo-item__btn:hover {
+  background: #f0f2f2;
+}
+
+.todo-item__arrow {
+  font-size: 1.2rem;
+  color: #555;
+  margin-left: 8px;
+}
